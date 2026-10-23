@@ -18,6 +18,14 @@ class TodoList:
         self._items.append(todo)
         return todo
 
+    def remove(self, title: str) -> bool:
+        title = title.strip()
+        for index, todo in enumerate(self._items):
+            if todo.title.strip() == title:
+                del self._items[index]
+                return True
+        return False
+
     def list_all(self) -> list[Todo]:
         return list(self._items)
 
